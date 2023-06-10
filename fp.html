@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Anytime Fuel Service</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-transparent  pb-5">
+      <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="images/1.png" width="40" height="40">&nbsp
+              AFS  
+            </a>
+            
+    </nav>
+
+    <div class="p-5 grid  align-items-center">
+      <div  class="g-col-12 g-col-sm-6 text-center">
+      <div class="card mx-auto">
+        <div class="card-body" >
+          <h5 class="card-title">Fuel Registration Form</h5>
+          <form id="fuel-form" action="fp.php" method="post">
+            <div class="form-group">
+              <label for="fuel-type">Fuel Type</label>
+              <select class="form-control" id="fuel-type" name="fuelType">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fuel-amount">Fuel Amount (liters)</label>
+              <input type="number" class="form-control" id="fuel-amount" name="fuelAmount" min="1" max="5" required>
+              <input type="hidden" name="username" value="<?php echo $username; ?>">
+            </div>
+            <div class="form-group">
+              <label for="delivery-address">Delivery Address</label>
+              <textarea class="form-control" id="delivery-address" name="deliveryAddress" rows="3"></textarea>
+            </div>
+            <br>
+
+            <button type="submit" class="btn btn-primary" onclick="calculateTotalAmount()">Submit</button>
+          </form>
+          
+          <div id="total-amount"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById('fuel-type').addEventListener('change', calculateTotalAmount);
+      document.getElementById('fuel-amount').addEventListener('input', calculateTotalAmount);
+      
+      function calculateTotalAmount() {
+        var fuelType = document.getElementById('fuel-type').value;
+        var fuelAmount = document.getElementById('fuel-amount').value;
+        var pricePerLiter = fuelType == 'petrol' ? 120 : 110;
+        var totalAmount = pricePerLiter * fuelAmount;
+        var totalAmountElement = document.getElementById('total-amount');
+        totalAmountElement.innerHTML = 'Total Amount: ' + totalAmount + 'Rs';
+      }
+   </script>
+    <div  class="g-col-12 g-col-sm-6 text-center">
+      <img src="images/1.png" class="img-fluid" width="434px" height="434px">
+     </div>
+   </div>
+  </body>
+
+
