@@ -1,3 +1,6 @@
+//change navbar color in line 79 in styles.css
+
+
 import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";

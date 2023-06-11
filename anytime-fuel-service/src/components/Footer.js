@@ -1,3 +1,6 @@
+//change footer color in line 406 styles.css
+
+
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
