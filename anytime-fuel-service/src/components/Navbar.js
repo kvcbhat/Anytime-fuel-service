@@ -20,6 +20,7 @@ import {
 
 import { CgFileDocument } from "react-icons/cg";
 import GitHubCalendar from "react-github-calendar";
+import { CgLogIn } from 'react-icons/cg'
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -87,7 +88,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link href="" target="_blank" rel="noreferrer">
-                <ImBlog style={{ marginBottom: "2px" }} /> Login
+                <CgLogIn style={{ marginBottom: "2px" }} /> Login
               </Nav.Link>
             </Nav.Item>
 
