@@ -8,9 +8,8 @@ import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
 import { DiGit } from "react-icons/di";
+import { FiShoppingCart } from 'react-icons/fi'
 import {
   AiFillStar,
   AiOutlineHome,
@@ -92,11 +91,10 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item className="fork-btn">
-              <Button href="" target="_blank" className="fork-btn-inner">
-                <DiGit style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
+            <Nav.Item>
+              <Nav.Link href="" target="_blank" rel="noreferrer">
+                <FiShoppingCart style={{ marginBottom: "2px" }} /> Cart
+              </Nav.Link>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
